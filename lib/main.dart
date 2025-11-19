@@ -59,19 +59,75 @@ class MyApp extends StatelessWidget {
       //     ),
       //   ),
       // ),
+      // home: Scaffold(
+      //   appBar:AppBar(
+      //     title: Text('제목'),
+      //     leading: Icon(Icons.star), // 주로 로고 들어가는 곳에 있는 아이콘(햄버거메뉴 등)
+      //     actions: [Icon(Icons.abc),Icon(Icons.access_alarm)],
+      //   ),
+      //   body: SizedBox(
+      //     // child: Text('Hello world!',
+      //     //   style: TextStyle(color: Color(0xffff0000), fontSize: 30, fontWeight: FontWeight.w700), // Colors.- 말고 색상코드 사용할 때. 0xff색상코드
+      //     // ),
+      //     // child: Icon(Icons.star, color: Colors.blue,),
+      //     child: ElevatedButton(onPressed: (){}, child: Text('글자'), style: ButtonStyle(),), // TextButton, IconButton, ElevatedButton
+      //   ),
+      // ),
       home: Scaffold(
-        appBar:AppBar(
-          title: Text('제목'),
-          leading: Icon(Icons.star), // 주로 로고 들어가는 곳에 있는 아이콘(햄버거메뉴 등)
-          actions: [Icon(Icons.abc),Icon(Icons.access_alarm)],
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(70),
+          child: AppBar(
+            title: TextButton(onPressed: (){}, child: Row(
+              children: [
+                Text('금호동3가', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),),
+                Icon(Icons.keyboard_arrow_down, size: 30,)
+              ],
+            ),),
+            actions: [Icon(Icons.search, size:40), Icon(Icons.menu, size: 40,), Icon(Icons.notifications, size: 40,)],
+          ),
         ),
-        body: SizedBox(
-          // child: Text('Hello world!',
-          //   style: TextStyle(color: Color(0xffff0000), fontSize: 30, fontWeight: FontWeight.w700), // Colors.- 말고 색상코드 사용할 때. 0xff색상코드
-          // ),
-          // child: Icon(Icons.star, color: Colors.blue,),
-          child: ElevatedButton(onPressed: (){}, child: Text('글자'), style: ButtonStyle(),), // TextButton, IconButton, ElevatedButton
-        ),
+        body: Align(
+          alignment: Alignment.topLeft,
+          child: Container(
+            width: double.infinity,
+            height: 200,
+            child: Row(
+              children: [
+                Container(
+                  child:
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(8.0),
+                    child: Image.asset(
+                        'assets/123.png',width: 150,
+                        height: 150,
+                        fit: BoxFit.cover
+                    ),
+                  ),
+                  padding: EdgeInsets.all(10),
+                ),
+                Flexible(child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('캐논 DSLR 100D (단렌즈, 충전기 16기가 SD포함', style: TextStyle(fontSize: 20),),
+                    Text('성동구 행당동 끝올 10분 전', style: TextStyle(color: Colors.grey),),
+                    Text('210,000원', style: TextStyle(fontWeight: FontWeight.w700),),
+                    Container(
+                      padding: EdgeInsets.all(5),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Icon(Icons.favorite_border, color: Colors.grey,),
+                          Text('4'),
+                        ],
+                      ),
+                    )
+                  ],
+                ))
+              ],
+            ),
+          ),
+        )
       ),
     );
   }
