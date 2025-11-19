@@ -28,16 +28,36 @@ class MyApp extends StatelessWidget {
       //     children: [Icon(Icons.star), Icon(Icons.heart_broken)],
       //   ),
       // ),
+      // home: Scaffold(
+      //   appBar: AppBar(
+      //     backgroundColor: Colors.blue,
+      //     title: Text('앱', style: TextStyle(color: Colors.white),),
+      //   ),
+      //   body: Text('안녕'),
+      //   bottomNavigationBar: BottomAppBar(child: SizedBox(
+      //     // width, height, child만 필요한 박스는 SizedBox(Container보다 가벼움)
+      //     height: 100,
+      //     child: Row(
+      //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      //       children: [Icon(Icons.phone), Icon(Icons.message), Icon(Icons.contact_page)],
+      //     ),
+      //   )),
+      // ),
       home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blue,
-          title: Text('앱', style: TextStyle(color: Colors.white),),
+        appBar: AppBar(title: Text('제목!!')),
+        body: Align(
+          alignment: Alignment.bottomCenter, // 박스 정렬
+          child: Container( // 가로로 꽉 채우고 싶을 땐 double.infinity (부모박스를 넘지 않음)
+            width: double.infinity, height: 150, // color: Colors.blue, decoration 속성이 있으면 Colors도 decoration 안에 넣어야 함
+            margin: EdgeInsets.fromLTRB(0, 30, 0, 0), // 위쪽에만 마진 30
+            padding: EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              border: Border.all(color: Colors.red)
+            ),
+            child: Text('내용!'),
+          ),
         ),
-        body: Text('안녕'),
-        bottomNavigationBar: BottomAppBar(child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [Icon(Icons.phone), Icon(Icons.message), Icon(Icons.contact_page)],
-        )),
       ),
     );
   }
