@@ -43,20 +43,34 @@ class MyApp extends StatelessWidget {
       //     ),
       //   )),
       // ),
+      // home: Scaffold(
+      //   appBar: AppBar(title: Text('제목!!')),
+      //   body: Align(
+      //     alignment: Alignment.bottomCenter, // 박스 정렬
+      //     child: Container( // 가로로 꽉 채우고 싶을 땐 double.infinity (부모박스를 넘지 않음)
+      //       width: double.infinity, height: 150, // color: Colors.blue, decoration 속성이 있으면 Colors도 decoration 안에 넣어야 함
+      //       margin: EdgeInsets.fromLTRB(0, 30, 0, 0), // 위쪽에만 마진 30
+      //       padding: EdgeInsets.all(20),
+      //       decoration: BoxDecoration(
+      //         color: Colors.blue,
+      //         border: Border.all(color: Colors.red)
+      //       ),
+      //       child: Text('내용!'),
+      //     ),
+      //   ),
+      // ),
       home: Scaffold(
-        appBar: AppBar(title: Text('제목!!')),
-        body: Align(
-          alignment: Alignment.bottomCenter, // 박스 정렬
-          child: Container( // 가로로 꽉 채우고 싶을 땐 double.infinity (부모박스를 넘지 않음)
-            width: double.infinity, height: 150, // color: Colors.blue, decoration 속성이 있으면 Colors도 decoration 안에 넣어야 함
-            margin: EdgeInsets.fromLTRB(0, 30, 0, 0), // 위쪽에만 마진 30
-            padding: EdgeInsets.all(20),
-            decoration: BoxDecoration(
-              color: Colors.blue,
-              border: Border.all(color: Colors.red)
-            ),
-            child: Text('내용!'),
-          ),
+        appBar:AppBar(
+          title: Text('제목'),
+          leading: Icon(Icons.star), // 주로 로고 들어가는 곳에 있는 아이콘(햄버거메뉴 등)
+          actions: [Icon(Icons.abc),Icon(Icons.access_alarm)],
+        ),
+        body: SizedBox(
+          // child: Text('Hello world!',
+          //   style: TextStyle(color: Color(0xffff0000), fontSize: 30, fontWeight: FontWeight.w700), // Colors.- 말고 색상코드 사용할 때. 0xff색상코드
+          // ),
+          // child: Icon(Icons.star, color: Colors.blue,),
+          child: ElevatedButton(onPressed: (){}, child: Text('글자'), style: ButtonStyle(),), // TextButton, IconButton, ElevatedButton
         ),
       ),
     );
