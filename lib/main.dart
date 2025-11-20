@@ -73,62 +73,73 @@ class MyApp extends StatelessWidget {
       //     child: ElevatedButton(onPressed: (){}, child: Text('글자'), style: ButtonStyle(),), // TextButton, IconButton, ElevatedButton
       //   ),
       // ),
+      // home: Scaffold(
+      //   appBar: PreferredSize(
+      //     preferredSize: Size.fromHeight(70),
+      //     child: AppBar(
+      //       title: TextButton(onPressed: (){}, child: Row(
+      //         children: [
+      //           Text('금호동3가', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),),
+      //           Icon(Icons.keyboard_arrow_down, size: 30,)
+      //         ],
+      //       ),),
+      //       actions: [Icon(Icons.search, size:40), Icon(Icons.menu, size: 40,), Icon(Icons.notifications, size: 40,)],
+      //     ),
+      //   ),
+      //   body: Align(
+      //     alignment: Alignment.topLeft,
+      //     child: Container(
+      //       width: double.infinity,
+      //       height: 200,
+      //       child: Row(
+      //         children: [
+      //           Container(
+      //             child:
+      //             ClipRRect(
+      //               borderRadius: BorderRadius.circular(8.0),
+      //               child: Image.asset(
+      //                   'assets/123.png',width: 150,
+      //                   height: 150,
+      //                   fit: BoxFit.cover
+      //               ),
+      //             ),
+      //             padding: EdgeInsets.all(10),
+      //           ),
+      //           Flexible(child: Column(
+      //             mainAxisAlignment: MainAxisAlignment.center,
+      //             crossAxisAlignment: CrossAxisAlignment.start,
+      //             children: [
+      //               Text('캐논 DSLR 100D (단렌즈, 충전기 16기가 SD포함', style: TextStyle(fontSize: 20),),
+      //               Text('성동구 행당동 끝올 10분 전', style: TextStyle(color: Colors.grey),),
+      //               Text('210,000원', style: TextStyle(fontWeight: FontWeight.w700),),
+      //               Container(
+      //                 padding: EdgeInsets.all(5),
+      //                 child: Row(
+      //                   mainAxisAlignment: MainAxisAlignment.end,
+      //                   children: [
+      //                     Icon(Icons.favorite_border, color: Colors.grey,),
+      //                     Text('4'),
+      //                   ],
+      //                 ),
+      //               )
+      //             ],
+      //           ))
+      //         ],
+      //       ),
+      //     ),
+      //   )
+      // ),
       home: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(70),
-          child: AppBar(
-            title: TextButton(onPressed: (){}, child: Row(
-              children: [
-                Text('금호동3가', style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),),
-                Icon(Icons.keyboard_arrow_down, size: 30,)
-              ],
-            ),),
-            actions: [Icon(Icons.search, size:40), Icon(Icons.menu, size: 40,), Icon(Icons.notifications, size: 40,)],
-          ),
+        appBar: AppBar(),
+        body: Row(
+          children: [
+            // Flexible(child: Container(color: Colors.red,), flex: 3,), // 비율로 설정하고 싶을 때
+            // Flexible(child: Container(color: Colors.blue,), flex: 7,)
+            Expanded(child: Container(color: Colors.red,)), // flex 1 과 똑같음. Row() 안에서 박스 하나만 꽉 채우고 싶으면 Expanded
+            Container(width: 100, color: Colors.blue,)
+          ],
         ),
-        body: Align(
-          alignment: Alignment.topLeft,
-          child: Container(
-            width: double.infinity,
-            height: 200,
-            child: Row(
-              children: [
-                Container(
-                  child:
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(8.0),
-                    child: Image.asset(
-                        'assets/123.png',width: 150,
-                        height: 150,
-                        fit: BoxFit.cover
-                    ),
-                  ),
-                  padding: EdgeInsets.all(10),
-                ),
-                Flexible(child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text('캐논 DSLR 100D (단렌즈, 충전기 16기가 SD포함', style: TextStyle(fontSize: 20),),
-                    Text('성동구 행당동 끝올 10분 전', style: TextStyle(color: Colors.grey),),
-                    Text('210,000원', style: TextStyle(fontWeight: FontWeight.w700),),
-                    Container(
-                      padding: EdgeInsets.all(5),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Icon(Icons.favorite_border, color: Colors.grey,),
-                          Text('4'),
-                        ],
-                      ),
-                    )
-                  ],
-                ))
-              ],
-            ),
-          ),
-        )
-      ),
+      )
     );
   }
 }
