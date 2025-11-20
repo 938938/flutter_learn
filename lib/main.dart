@@ -129,17 +129,39 @@ class MyApp extends StatelessWidget {
       //     ),
       //   )
       // ),
+      // home: Scaffold(
+      //   appBar: AppBar(),
+      //   body: Row(
+      //     children: [
+      //       // Flexible(child: Container(color: Colors.red,), flex: 3,), // 비율로 설정하고 싶을 때
+      //       // Flexible(child: Container(color: Colors.blue,), flex: 7,)
+      //       Expanded(child: Container(color: Colors.red,)), // flex 1 과 똑같음. Row() 안에서 박스 하나만 꽉 채우고 싶으면 Expanded
+      //       Container(width: 100, color: Colors.blue,)
+      //     ],
+      //   ),
+      // )
       home: Scaffold(
         appBar: AppBar(),
-        body: Row(
+        // body: ShopItem(),
+        body: ListView( // 스크롤 바, 스크롤 위치 감시 가능, 메모리 절약 가능. 긴목록이 필요할 땐 ListView
           children: [
-            // Flexible(child: Container(color: Colors.red,), flex: 3,), // 비율로 설정하고 싶을 때
-            // Flexible(child: Container(color: Colors.blue,), flex: 7,)
-            Expanded(child: Container(color: Colors.red,)), // flex 1 과 똑같음. Row() 안에서 박스 하나만 꽉 채우고 싶으면 Expanded
-            Container(width: 100, color: Colors.blue,)
+            Text('안녕'),
           ],
         ),
-      )
+      ),
     );
   }
 }
+
+// var A =  SizedBox(
+//   child: Text('Hello world'),
+// ); // 이렇게 변수에 담을 수도 있음. 변하지 않는 UI들은 변수 함수로 축약해도 됨(꼭 그래야 하는 건 아님). 변동이 필요한건 class
+//
+// class ShopItem extends StatelessWidget { // 커스텀 위젯 (stless) class로 만들어야 함
+//   const ShopItem({super.key});
+//
+//   @override // 바로 아래 함수를 먼저 적용시키라는 의미
+//   Widget build(BuildContext context) {
+//     return A;
+//   }
+// }
